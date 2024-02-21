@@ -26,7 +26,8 @@ type TypographyKey =
   | "input"
   | "smallText"
   | "smallCaps"
-  | "navigation";
+  | "navigation"
+  | "navTitle"
 
 type TypographyVariants = { variant: Record<TypographyKey, string> };
 
@@ -57,6 +58,7 @@ const typographyVariants = cva<TypographyVariants>("font-medium", {
       sectitleWhite: "text-white text-xxl md:text-2xl lg:text-3xxl font-black leading-sm",
       smallCaps: "text-sm lg:text-lg font-medium uppercase",
       navigation: "text-sm font-normal",
+      navTitle: "text-2lg lg:text-xxl font-semiblod leading-md",
     },
   },
   defaultVariants: {
