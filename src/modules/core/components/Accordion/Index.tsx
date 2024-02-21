@@ -1,0 +1,57 @@
+// @use-client
+'use client'
+import { useState } from 'react';
+import { Typography } from '../typography';
+
+// SVG icon for the up arrow
+const AngleUpIcon = () => (
+    <svg width="23" height="13" viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 11L11.5 2L21 11" stroke="#4E415F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+
+);
+
+// SVG icon for the down arrow
+const AngleDownIcon = () => (
+    <svg width="23" height="13" viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 2L11.5 11L21 2" stroke="#4E415F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+
+);
+
+interface AccordionItem {
+    title: string;
+    content: string;
+}
+
+interface AccordionProps {
+    items: AccordionItem[];
+}
+
+const Accordion: React.FC<AccordionProps> = ({ items }) => {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    const toggleAccordion = (index: number) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+    return (
+        <div>
+            {items.map((item: AccordionItem, index: number) => (
+                <div key={index} className="mb-6 shadow-accordion rounded-[2.5rem]">
+                    <button className="flex items-center justify-between text-primary-lightPurple-2 text-xl leading-md  shadow-accordion outline-none w-full py-5 px-16 rounded-[2.5rem] " onClick={() => toggleAccordion(index)}>
+                        <span>{item.title}</span>
+                        {openIndex === index ? <AngleUpIcon /> : <AngleDownIcon />}
+                    </button>
+                    {openIndex === index && (
+                        <div className="px-16 py-6">
+                            <Typography Tag='p' variant='infoText' className='text-neutral-secheadlines'>{item.content}</Typography>
+                        </div>
+                    )}
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default Accordion;
