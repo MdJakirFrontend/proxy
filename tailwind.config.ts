@@ -132,6 +132,7 @@ export default {
         sm: "115%",
         md: "140%",
         xmd: "145%",
+        xl: "160%",
         lg: "1.34rem",
       },
       fontSize: {
@@ -144,6 +145,7 @@ export default {
         "3lg": "1.125rem", //18px
         "4lg": "1.25rem", //20px
         "xl": "1.5rem", //24px
+        "xxl": "1.875rem", //24px
         "2xl": "2rem", //32px
         "3xl": "2.75rem", //44px
         "3xxl": "3.125rem", //50px
