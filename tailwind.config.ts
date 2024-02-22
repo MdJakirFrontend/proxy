@@ -24,6 +24,7 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        placeHolder: "#949394",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -145,15 +146,18 @@ export default {
         "3lg": "1.125rem", //18px
         "4lg": "1.25rem", //20px
         "xl": "1.5rem", //24px
-        "xxl": "1.875rem", //24px
+        "xxl": "1.875rem", //30px
         "2xl": "2rem", //32px
+        "3xll": "2.50rem", //40px
         "3xl": "2.75rem", //44px
         "3xxl": "3.125rem", //50px
+        "5xxl": "5rem", //50px
       },
       boxShadow: {
         'accordion': '6px 6px 20px 0 rgba(0, 0, 0, 0.15)',
-        'switch': '0px 0px 20px 0px rgba(0, 0, 0, 0.25)'
-
+        'switch': '0px 0px 20px 0px rgba(0, 0, 0, 0.25)',
+        'pricing': '6px 6px 20px 0 rgba(0, 0, 0, 0.15)',
+        'partnar': '6px 6px 44.6px 14px rgba(0, 0, 0, 0.12)',
       },
     }
 
